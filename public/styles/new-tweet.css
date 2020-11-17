@@ -1,0 +1,42 @@
+form {
+  justify-content: center;
+  flex-direction: column;
+  display: inline-flex;
+}
+
+textarea {
+  background-color: transparent; 
+  border-color: transparent transparent dimgray; 
+  border-bottom-width: thick; 
+  font-family: "Source Sans Pro"; 
+  font-size: medium; 
+  margin: 0px; 
+  width: 432px; 
+  height: 39px;
+}
+
+label {
+  line-height: 1.15;
+  color: #545149;
+  font-size: 24px;
+  box-sizing: inherit;
+  font-family: 'Source Sans Pro';
+  font-weight: bolder;
+}
+
+textarea {
+  background-color: transparent;
+  border-color: transparent transparent dimgray;
+  border-bottom-width: thick;
+  font-family: "Source Sans Pro";
+  font-size: medium;
+  resize: none;
+}
+
+button {
+  background-color: #4056A1;
+  font-family: 'Bungee';
+  color: white;
+  border-color: transparent;
+  margin-top: 10px;
+}
