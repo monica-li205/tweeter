@@ -4,18 +4,16 @@ form {
   display: inline-flex;
 }
 
+.new-tweet {
+  display: inline-flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 1.5em;
+}
+
 label {
   font-family: 'Source Sans Pro';
   font-weight: bolder;
-}
-
-textarea {
-  background-color: transparent; 
-  border-color: transparent transparent dimgray; 
-  border-bottom-width: thick; 
-  font-family: "Source Sans Pro"; 
-  font-size: medium; 
-  resize: none;
 }
 
 div {
@@ -24,15 +22,14 @@ div {
   margin-top: 10px;
 }
 
-
-textarea {
+#tweet-text {
   background-color: transparent;
   border-color: transparent transparent dimgray;
   border-bottom-width: thick;
   font-family: "Source Sans Pro";
   font-size: medium;
   height: 32px;
-  width: 470px;
+  width: 730px;
   resize: none;
 }
 
