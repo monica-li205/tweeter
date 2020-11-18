@@ -61,8 +61,8 @@ article {
   padding-bottom: 1em;
   border-width: thick;
   border-style: solid;
-  height: fit-content;
-  margin-bottom: 1.0em;
+  height: 200px;
+  margin-bottom: 3.0em;
   /* box-shadow: 10px 10px lightgrey; */
 }
 
