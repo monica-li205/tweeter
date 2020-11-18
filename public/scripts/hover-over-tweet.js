@@ -2,7 +2,8 @@ $(document).ready(function() {
   $("article").hover(function() {
     $(".tweeter-handle").show();
     $(".icons").show();
-    $(this).css("box-shadow", "10px 10px  lightgrey")
+    $(this).css("box-shadow", "10px 10px  lightgrey");
+
   }, function() {
     $(".tweeter-handle").hide();
     $(".icons").hide();
