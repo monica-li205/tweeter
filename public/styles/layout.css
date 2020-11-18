@@ -17,10 +17,9 @@ html {
 body {
   color: #545149;
   background-color: #f4f1ec;
-  font-size: 24px;
+  font-size: x-large;
   font-family: 'Source Sans Pro', sans-serif;
 }
-
 
 /*
  * Additional CSS can be defined below or in other CSS files, as per instructions
@@ -50,20 +49,7 @@ header {
   display: inline-flex;
   justify-content: center;
   flex-direction: column;
-}
-
-article {
-  display: inline-flex;
-  flex-direction: column;
-  font-size: 16px;
-  padding-left: 1em;
-  padding-right: 1em;
-  padding-bottom: 1em;
-  border-width: thick;
-  border-style: solid;
-  height: 200px;
-  margin-bottom: 3.0em;
-  /* box-shadow: 10px 10px lightgrey; */
+  width: 60%;
 }
 
 .tweet-header {
@@ -74,17 +60,18 @@ article {
   display: inline-flex;
   flex-direction: row;
   margin-bottom: 2.0em;
+  padding-top: 1.0em;
 }
 
 div {
   display: inline-flex;
   justify-content: space-between;
-  margin-top: 10px;
+  margin-top: 0.5em;
 }
 
 .icon {
-  padding-right: 10px;
-  font-size: 45px
+  padding-right: 0.25px;
+  font-size: xx-large;
 }
 
 .username {
@@ -93,18 +80,12 @@ div {
   padding-left: 0.75em;
 }
 
-.tweeter-handle {
-  color: lightgrey;
-  font-weight: 600;
-  font-size: larger;
-}
 
 .tweeter-content {
   background-color: transparent;
-  border-color: transparent transparent dimgray;
-  border-bottom-width: thick;
+  border-color: transparent;
   font-family: "Source Sans Pro";
-  width: 700px;
+  width: 100%;
   height: fit-content;
   font-size: larger;
   font-weight: 600;
@@ -117,4 +98,41 @@ div {
   justify-content: space-between;
   padding-top: 0.75em;
   font-weight: 600;
+  border-top-style: solid;
+  height: 2em;
+}
+
+article {
+  display: inline-flex;
+  flex-direction: column;
+  font-size: large;
+  padding-left: 1em;
+  padding-right: 1em;
+  padding-bottom: 1em;
+  border-width: thick;
+  border-style: solid;
+  height: 10em;
+  margin-bottom: 3.0em;
+}
+.icons {
+  display: none;
+}
+
+.tweeter-handle {
+  display: none;
+  color: lightgrey;
+  font-weight: 600;
+  font-size: larger;
+}
+
+article:hover .tweeter-handle {
+  display: block;
+}
+
+article:hover .icons {
+  display: block;
+}
+
+article:hover {
+  box-shadow: 0.75em 0.75em lightgrey;
 }
