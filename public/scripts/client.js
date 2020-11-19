@@ -46,7 +46,7 @@ $(document).ready(function() {
         </div>
         <span class="tweeter-handle">${tweet.user.handle}</span>
       </header>
-      <textarea class="tweeter-content">${tweet.content.text}</textarea>
+      <p class="tweeter-content">${tweet.content.text}</p>
       <footer class="tweet-footer">
         <span>${tweet.created_at}</span>
         <div class="icons">
@@ -66,8 +66,12 @@ $(document).ready(function() {
     const queryString = $("#tweet-text").serialize();
     console.log(queryString);
 
-    if ($('#tweet-text').val() === '' || $('#tweet-text').val() === null || $('#tweet-text').val().length > 140) {
-      return window.alert('invalid tweet!!');
+    if ($('#tweet-text').val() === '') {
+      return window.alert('cannot submit empty tweet');
+    } else if ($('#tweet-text').val() === null) {
+      return window.alert('tweet is invalid');
+    } else if ($('#tweet-text').val().length > 140)  {
+      return window.alert('tweet exceeds permitted character count');
     } else {
       $.ajax({
         type: 'POST',

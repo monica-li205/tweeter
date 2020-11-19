@@ -91,6 +91,8 @@ div {
   font-weight: 600;
   color: dimgray;
   resize: none;
+  overflow: visible;
+  overflow-wrap: anywhere
 }
 
 .tweet-footer {
@@ -111,7 +113,7 @@ article {
   padding-bottom: 1em;
   border-width: thick;
   border-style: solid;
-  height: 10em;
+  height: fit-content;
   margin-bottom: 3.0em;
 }
 .icons {
