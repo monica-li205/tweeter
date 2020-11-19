@@ -1,5 +1,5 @@
 $(document).ready(function() {
-  $('textarea').keydown(function() {
+  $('#tweet-text').keydown(function() {
     const value = $(this).val();
     const remainingChar = 140 - value.length;
     const counter = $(this).siblings().find('.counter');

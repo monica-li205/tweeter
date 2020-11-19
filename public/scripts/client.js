@@ -65,13 +65,18 @@ $(document).ready(function() {
     event.preventDefault();
     const queryString = $("#tweet-text").serialize();
     console.log(queryString);
-    $.ajax({
-      type: 'POST',
-      url: '/tweets',
-      data: queryString,
-      success: 'ok',
-      dataType: 'json',
-    });
+
+    if ($('#tweet-text').val() === '' || $('#tweet-text').val() === null || $('#tweet-text').val().length > 140) {
+      return window.alert('invalid tweet!!');
+    } else {
+      $.ajax({
+        type: 'POST',
+        url: '/tweets',
+        data: queryString,
+        success: 'ok',
+        dataType: 'json',
+      });
+    }
     
   })
   
