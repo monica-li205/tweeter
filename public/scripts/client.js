@@ -5,19 +5,24 @@
  */
 
 $(document).ready(function() {
+  const escape =  function(str) {
+    let span = document.createElement('span');
+    span.appendChild(document.createTextNode(str));
+    return span.innerHTML;
+  }
   const createTweetElement = function (tweet) {
     const $tweet = $(`
       <article>
       <header class="tweet-header">
         <div>
           <span class="material-icons"> pets </span>
-          <span class="username">${tweet.user.name}</span>
+          <span class="username">${escape(tweet.user.name)}</span>
         </div>
-        <span class="tweeter-handle">${tweet.user.handle}</span>
+        <span class="tweeter-handle">${escape(tweet.user.handle)}</span>
       </header>
-      <p class="tweeter-content">${tweet.content.text}</p>
+      <p class="tweeter-content">${escape(tweet.content.text)}</p>
       <footer class="tweet-footer">
-        <span>${tweet.created_at}</span>
+        <span>${escape(tweet.created_at)}</span>
         <div class="icons">
           <span class="material-icons"> flag </span>
           <span class="material-icons"> repeat </span>
