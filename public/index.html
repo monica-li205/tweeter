@@ -29,9 +29,10 @@
   <body>
     <!-- Top nav bar (fixed) -->
     <nav class="nav">
-      <span style="font-family: Bungee">tweeter</span>
+      <span style="font-family: Bungee" id="nav-logo">tweeter</span>
     </nav>
-    <header>
+    <header id="top-header">
+      <span style="font-family: Bungee" id="header-logo">tweeter</span>
       <div>
           <img src="/images/profile-hex.png"> 
       </div>
@@ -43,7 +44,8 @@
     <!-- Page-specific (main) content here -->
     <main class="container">
       <section class="new-tweet">
-        <h2>Compose Tweet</h2>
+        <h2>Compose Tweet</h2> 
+        <span id="error-message">error</span>       
         <form id="submit-tweet">
           <label for="tweet-text">What are you humming about?</label>
           <textarea name="text" id="tweet-text"></textarea>

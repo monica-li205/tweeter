@@ -11,6 +11,7 @@ form {
   flex-direction: column;
   display: inline-flex;
   width: 60%;
+  margin-top: 2em;
 }
 
 label {
@@ -34,13 +35,29 @@ div {
   resize: none;
 }
 
+textarea:focus, input:focus {
+  outline: none;
+}
+
 button {
-  background-color: #4056A1;
+  background-color: darkseagreen;
   font-family: 'Bungee';
   color: white;
   border-color: transparent;
 }
 
+button:focus, input:focus{
+  outline: none;
+}
+
 output {
   font-family: 'Bungee';
+}
+@media only screen and (min-width: 1024px) {
+
+} 
+@media only screen and (min-width: 768px) and (max-width: 1023) {
+  /* nav {
+
+  } */
 }

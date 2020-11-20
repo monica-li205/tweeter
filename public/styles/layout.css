@@ -25,13 +25,11 @@ body {
  * Additional CSS can be defined below or in other CSS files, as per instructions
  */
 main {
-  width: 90%;
   background-color: #f4f1ec;
-  margin-left: 5%;
-  margin-right: 5%;
   display: inline-flex;
   align-items: center;
   flex-direction: column;
+  width: 100vw;
 }
 
 header {
@@ -60,7 +58,6 @@ header {
   display: inline-flex;
   flex-direction: row;
   margin-bottom: 2.0em;
-  padding-top: 1.0em;
 }
 
 div {
@@ -92,7 +89,7 @@ div {
   color: dimgray;
   resize: none;
   overflow: visible;
-  overflow-wrap: anywhere
+  overflow-wrap: anywhere;
 }
 
 .tweet-footer {
@@ -111,6 +108,7 @@ article {
   padding-left: 1em;
   padding-right: 1em;
   padding-bottom: 1em;
+  padding-top: 1em;
   border-width: thick;
   border-style: solid;
   height: fit-content;
@@ -138,3 +136,18 @@ article:hover .icons {
 article:hover {
   box-shadow: 0.75em 0.75em lightgrey;
 }
+
+#error-message {
+  font-family: 'Bungee';
+  color: indianred;
+  font-style: oblique;
+  display: none;
+}
+
+@media only screen and (min-width: 1024px) {
+  main {
+    float: right;
+    margin-top: 5em;
+    width: 60vw;
+  }
+} 

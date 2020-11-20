@@ -5,12 +5,48 @@
  */
 
 $(document).ready(function() {
+  const currentTimeStamp = new Date().getTime();
+  function convertUnix(current, previous) {
+      const msPerMinute = 60 * 1000;
+      const msPerHour = msPerMinute * 60;
+      const msPerDay = msPerHour * 24;
+      const msPerMonth = msPerDay * 30;
+      const msPerYear = msPerDay * 365;
+  
+      const elapsed = current - previous;
+  
+      if (elapsed < msPerMinute) {
+        return Math.round(elapsed/1000) + ' seconds ago';   
+      }
+  
+      else if (elapsed < msPerHour) {
+        return Math.round(elapsed/msPerMinute) + ' minutes ago';   
+      }
+  
+      else if (elapsed < msPerDay ) {
+        return Math.round(elapsed/msPerHour ) + ' hours ago';   
+      }
+  
+      else if (elapsed < msPerMonth) {
+          return Math.round(elapsed/msPerDay) + ' days ago';   
+      }
+  
+      else if (elapsed < msPerYear) {
+          return Math.round(elapsed/msPerMonth) + ' months ago';   
+      }
+  
+      else {
+          return Math.round(elapsed/msPerYear ) + ' years ago';   
+      }
+  }
   const escape =  function(str) {
     let span = document.createElement('span');
     span.appendChild(document.createTextNode(str));
     return span.innerHTML;
   }
+
   const createTweetElement = function (tweet) {
+    const convertedTimestamp = convertUnix(currentTimeStamp, tweet.created_at);
     const $tweet = $(`
       <article>
       <header class="tweet-header">
@@ -22,8 +58,8 @@ $(document).ready(function() {
       </header>
       <p class="tweeter-content">${escape(tweet.content.text)}</p>
       <footer class="tweet-footer">
-        <span>${escape(tweet.created_at)}</span>
-        <div class="icons">
+      <span>${escape(convertedTimestamp)}</span>
+      <div class="icons">
           <span class="material-icons"> flag </span>
           <span class="material-icons"> repeat </span>
           <span class="material-icons"> favorite </span>
@@ -57,16 +93,21 @@ $(document).ready(function() {
     console.log(queryString);
     
     if ($('#tweet-text').val() === '') {
-      return window.alert('cannot submit empty tweet');
+      $('#error-message').slideDown('slow')
+      $('#error-message').show().text('ERROR: cannot submit empty tweet!')
+      // $('#error-message').text('cannot submit empty tweet');
 
     } else if ($('#tweet-text').val() === null) {
-      return window.alert('tweet is invalid');
+      $('#error-message').slideDown('slow')
+      $('#error-message').show().text('ERROR: tweet is invalid!');
 
     } else if ($('#tweet-text').val().length > 140)  {
-      return window.alert('tweet exceeds permitted character count');
+      $('#error-message').slideDown('slow')
+      $('#error-message').show().text('ERROR: tweet exceeds permitted character count!');
 
     } else {
       // $.post('/tweets', queryString)
+      $('#error-message').hide();
       $.ajax({
         type: 'POST',
         url: '/tweets',

@@ -9,5 +9,8 @@ $(document).ready(function() {
     } else {
       counter.text(remainingChar);
     }
+    if (remainingChar > 0) {
+      counter.text(remainingChar).css('color', 'dimgrey');
+    }
   })
 });
