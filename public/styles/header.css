@@ -19,6 +19,14 @@
   color: darkcyan;
 }
 
+#profile-name {
+  margin-bottom: 8vh;
+}
+
+#profile-image {
+  margin-top: 0vh;
+}
+
 @media only screen and (min-width: 1024px) {
   #top-header  {
     height: 20em;
@@ -30,4 +38,11 @@
   #header-logo {
     display: none;
   }
+  #profile-name {
+    margin-bottom: 5vh;
+  }
+  #profile-image {
+    margin-top: 8vh;
+  }
+  
 } 
