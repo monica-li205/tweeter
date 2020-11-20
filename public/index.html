@@ -14,6 +14,9 @@
     <link rel="stylesheet" href="/styles/nav.css" type="text/css" />
     <link rel="stylesheet" href="/styles/header.css" type="text/css" />
     <link rel="stylesheet" href="/styles/new-tweet.css" type="text/css" />
+    <link rel="stylesheet" href="/styles/nav-to-top-button.css" type="text/css" />
+
+    
 
     <!-- External JS -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
@@ -21,7 +24,7 @@
     <!-- App JS -->
     <script type="text/javascript" src="/scripts/client.js"></script>
     <script type="text/javascript" src="/scripts/composer-char-counter.js"></script>
-    <!-- <script type="text/javascript" src="/scripts/hover-over-tweet.js"></script> -->
+    <script type="text/javascript" src="/scripts/nav-to-top-button.js"></script>
     <script type="text/javascript" src="/scripts/fixed-nav-bar.js"></script>
 
   </head>
@@ -38,7 +41,7 @@
       </div>
       <br>
       <div>
-          <h2>Your Name</h2>
+          <h2 id="profile-name">Your Name</h2>
       </div>
   </header>
     <!-- Page-specific (main) content here -->
@@ -49,7 +52,7 @@
         <form id="submit-tweet">
           <label for="tweet-text">What are you humming about?</label>
           <textarea name="text" id="tweet-text"></textarea>
-          <div>
+          <div id="button-and-counter">
             <button type="submit" id="submit-tweet-button">Tweet</button>
             <output name="counter" class="counter" for="tweet-text">140</output>
           </div>
@@ -57,5 +60,8 @@
       </section>
       <section class="tweet-container" id="tweet-container"></section>
     </main>
+    <div id="scroll-button-location">
+      <button id="nav-to-top-button">TOP</a>
+    </div>
   </body>
 </html>
