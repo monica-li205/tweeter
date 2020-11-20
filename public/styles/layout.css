@@ -32,17 +32,6 @@ main {
   width: 100vw;
 }
 
-header {
-  height: 400px;
-  width: 100%;
-  display: flex;
-  justify-content: center;
-  flex-direction: column;
-  align-items: center;
-  background-color: mistyrose;
-  background-image: url(../images/inspiration-geometry.png);
-}
-
 .tweet-container {
   display: inline-flex;
   justify-content: center;
@@ -150,4 +139,4 @@ article:hover {
     margin-top: 5em;
     width: 60vw;
   }
-} 
+}
